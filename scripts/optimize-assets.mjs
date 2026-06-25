@@ -95,10 +95,7 @@ async function convertVideo(inputPath, outputPath) {
 }
 
 async function main() {
-  const pngFiles = [
-    ...collectPngFiles(assetsDir),
-    path.join(root, "fallback.png"),
-  ].filter((file) => fs.existsSync(file));
+  const pngFiles = collectPngFiles(assetsDir).filter((file) => fs.existsSync(file));
 
   console.log(`Converting ${pngFiles.length} PNG images...\n`);
 
@@ -114,10 +111,7 @@ async function main() {
   console.log("\nConverting videos...\n");
 
   const videoResults = [];
-  const videoJobs = [
-    [path.join(assetsDir, "intro.mp4"), path.join(assetsDir, "intro.webm")],
-    [path.join(root, "intro.mp4"), path.join(root, "intro.webm")],
-  ];
+  const videoJobs = [[path.join(root, "intro.mp4"), path.join(root, "intro.webm")]];
 
   for (const [input, output] of videoJobs) {
     const result = await convertVideo(input, output);

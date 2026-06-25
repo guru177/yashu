@@ -9,9 +9,7 @@ const assetsDir = path.join(root, "assets");
 
 const logoPath = path.join(assetsDir, "logo.jpg");
 const thumbPath = path.join(assetsDir, "thump.png");
-const heroPath = path.join(assetsDir, "herobg.jpg");
 const ogThumbPath = path.join(assetsDir, "og-thumb.jpg");
-const ogThumbWebpPath = path.join(assetsDir, "og-thumb.webp");
 
 async function generateFavicons() {
   if (!fs.existsSync(logoPath)) {
@@ -40,13 +38,11 @@ async function generateFavicons() {
 }
 
 async function generateOgThumb() {
-  const source = fs.existsSync(thumbPath)
-    ? thumbPath
-    : fs.existsSync(heroPath)
-      ? heroPath
-      : logoPath;
+  const source = [thumbPath, path.join(assetsDir, "hero5.jpg"), logoPath].find((file) =>
+    fs.existsSync(file)
+  );
 
-  if (!fs.existsSync(source)) {
+  if (!source) {
     console.warn("Skip og-thumb: no source image found");
     return;
   }
@@ -56,12 +52,7 @@ async function generateOgThumb() {
     .jpeg({ quality: 90, mozjpeg: true })
     .toFile(ogThumbPath);
 
-  await sharp(ogThumbPath)
-    .webp({ quality: 85 })
-    .toFile(ogThumbWebpPath);
-
   console.log(`Created assets/og-thumb.jpg from ${path.basename(source)}`);
-  console.log("Created assets/og-thumb.webp");
 }
 
 async function main() {
