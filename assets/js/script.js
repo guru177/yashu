@@ -4,21 +4,31 @@
   var tapHint = document.getElementById("tap-hint");
   var bgMusic = document.getElementById("bg-music");
   var mainSite = document.getElementById("main-site");
-  var butterflyContainer = document.getElementById("butterflies");
+  var heroFloatContainer = document.getElementById("hero-float");
   var hasStarted = false;
   var isFading = false;
   var fadeLead = 1.4;
-  var butterfliesActive = false;
+  var heroFloatActive = false;
   var musicVolume = 0.35;
   var musicFade = 3;
   var musicLoopReady = false;
 
-  var butterflySvg =
-    '<svg class="butterfly__svg" viewBox="0 0 48 32" xmlns="http://www.w3.org/2000/svg">' +
-    '<path d="M24 16 C14 6 4 8 6 16 C4 24 14 26 24 16 Z" fill="white" fill-opacity="0.9"/>' +
-    '<path d="M24 16 C34 6 44 8 42 16 C44 24 34 26 24 16 Z" fill="white" fill-opacity="0.9"/>' +
-    '<ellipse cx="24" cy="16" rx="1.2" ry="5.5" fill="white" fill-opacity="0.95"/>' +
-    "</svg>";
+  var heroFloatSvgs = {
+    heart:
+      '<svg class="hero-float__svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">' +
+      '<path d="M12 21s-7-4.5-9.5-9C1 9 2.5 5.5 6 5.5c2 0 3.5 1.5 4 2.5.5-1 2-2.5 4-2.5 3.5 0 5 3.5 3.5 6.5C19 16.5 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.1"/>' +
+      "</svg>",
+    petal:
+      '<svg class="hero-float__svg" viewBox="0 0 20 28" xmlns="http://www.w3.org/2000/svg">' +
+      '<path d="M10 1.5C4.5 8 2.5 15.5 10 26.5C17.5 15.5 15.5 8 10 1.5Z" fill="currentColor"/>' +
+      "</svg>",
+    sparkle:
+      '<svg class="hero-float__svg" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">' +
+      '<path d="M8 1v14M1 8h14M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="0.7" stroke-linecap="round"/>' +
+      "</svg>",
+  };
+
+  var heroFloatTypes = ["petal", "petal", "petal", "petal", "heart", "sparkle"];
 
   document.body.classList.add("intro-active");
 
@@ -76,38 +86,44 @@
     }
   }
 
-  function spawnButterfly() {
-    if (!butterflyContainer) return;
+  function spawnHeroFloat() {
+    if (!heroFloatContainer) return;
 
-    var butterfly = document.createElement("div");
-    butterfly.className = "butterfly";
-    butterfly.innerHTML = butterflySvg;
+    var type = heroFloatTypes[Math.floor(Math.random() * heroFloatTypes.length)];
+    var item = document.createElement("div");
+    item.className = "hero-float__item hero-float__item--" + type;
+    item.innerHTML = heroFloatSvgs[type];
 
-    var size = 16 + Math.random() * 18;
-    var drift = -50 + Math.random() * 100;
-    var duration = 10 + Math.random() * 8;
+    var size = type === "sparkle" ? 10 + Math.random() * 8 : 14 + Math.random() * 14;
+    var sway = 22 + Math.random() * 38;
+    var duration = type === "petal" ? 22 + Math.random() * 10 : 18 + Math.random() * 8;
+    var spinStart = -20 + Math.random() * 40;
+    var spinEnd = spinStart + (-30 + Math.random() * 60);
 
-    butterfly.style.left = 5 + Math.random() * 90 + "%";
-    butterfly.style.width = size + "px";
-    butterfly.style.setProperty("--drift", drift + "px");
-    butterfly.style.setProperty("--fly-duration", duration + "s");
+    item.style.left = 4 + Math.random() * 92 + "%";
+    item.style.width = size + "px";
+    item.style.setProperty("--sway", sway + "px");
+    item.style.setProperty("--spin-start", spinStart + "deg");
+    item.style.setProperty("--spin-end", spinEnd + "deg");
+    item.style.setProperty("--float-duration", duration + "s");
+    item.style.animationDelay = Math.random() * 2.5 + "s";
 
-    butterflyContainer.appendChild(butterfly);
-    butterfly.addEventListener("animationend", function () {
-      butterfly.remove();
+    heroFloatContainer.appendChild(item);
+    item.addEventListener("animationend", function () {
+      item.remove();
     });
   }
 
-  function startButterflies() {
-    if (butterfliesActive || !butterflyContainer) return;
-    butterfliesActive = true;
+  function startHeroFloat() {
+    if (heroFloatActive || !heroFloatContainer) return;
+    heroFloatActive = true;
 
     var i;
-    for (i = 0; i < 8; i++) {
-      setTimeout(spawnButterfly, i * 350);
+    for (i = 0; i < 6; i++) {
+      setTimeout(spawnHeroFloat, i * 550);
     }
 
-    setInterval(spawnButterfly, 2000);
+    setInterval(spawnHeroFloat, 3000);
   }
 
   function initCountdown() {
@@ -290,6 +306,17 @@
     });
   }
 
+  function initHeroScroll() {
+    var btn = document.getElementById("scroll-to-save-date");
+    var target = document.getElementById("save-date");
+
+    if (!btn || !target) return;
+
+    btn.addEventListener("click", function () {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }
+
   function initSaveDateButton() {
     var btn = document.getElementById("save-date-btn");
     var popup = document.getElementById("celebration-popup");
@@ -374,10 +401,11 @@
     mainSite.classList.add("is-visible");
     document.body.classList.remove("intro-active");
     document.body.classList.add("intro-done");
-    startButterflies();
+    startHeroFloat();
     setTimeout(initRevealAnimations, 200);
     initSaveDateButton();
     initScrollArrow();
+    initHeroScroll();
     initCountdown();
     initMemoriesCarousel();
     initScrollToTop();
@@ -416,10 +444,11 @@
     overlay.classList.add("is-fading");
     document.body.classList.remove("intro-active");
     document.body.classList.add("intro-done");
-    startButterflies();
+    startHeroFloat();
     setTimeout(initRevealAnimations, 200);
     initSaveDateButton();
     initScrollArrow();
+    initHeroScroll();
     initCountdown();
     initMemoriesCarousel();
     initScrollToTop();
