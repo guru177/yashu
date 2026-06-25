@@ -7,7 +7,7 @@
   <meta name="color-scheme" content="light" />
 
   <title>Yashaswini &amp; Aswin — Engagement Invitation</title>
-  <meta name="description" content="Together with our families, we joyfully invite you to celebrate the engagement of Yashaswini &amp; Aswin on Sunday, 30 August 2026 in Kochi, Kerala." />
+  <meta name="description" content="Together with our families, we joyfully invite you to celebrate the engagement of Yashaswini &amp; Aswin on Sunday, 30 August 2026 at Sree Kuladevatha Mandir Complex, Ambalamedu (Annapoorna Hall)." />
   <meta name="author" content="Yashaswini &amp; Aswin" />
   <meta name="robots" content="index, follow" />
   <meta name="format-detection" content="telephone=no" />
@@ -25,7 +25,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Yashaswini &amp; Aswin" />
   <meta property="og:title" content="Yashaswini &amp; Aswin — Engagement Invitation" />
-  <meta property="og:description" content="We're getting engaged! Join us on Sunday, 30 August 2026, 4 – 6 PM onwards at Grand Palace Hall, Kochi, Kerala." />
+  <meta property="og:description" content="We're getting engaged! Join us on Sunday, 30 August 2026, 3.30 – 4.30 PM at Sree Kuladevatha Mandir Complex, Ambalamedu (Annapoorna Hall)." />
   <meta property="og:url" content="https://aswin-yashaswini.vercel.app/" />
   <meta property="og:locale" content="en_IN" />
   <meta property="og:image" content="https://aswin-yashaswini.vercel.app/assets/og-thumb.jpg" />
@@ -39,7 +39,7 @@
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Yashaswini &amp; Aswin — Engagement Invitation" />
-  <meta name="twitter:description" content="We're getting engaged! Sunday, 30 August 2026 · Grand Palace Hall, Kochi, Kerala." />
+  <meta name="twitter:description" content="We're getting engaged! Sunday, 30 August 2026 · 3.30 – 4.30 PM · Sree Kuladevatha Mandir Complex, Ambalamedu (Annapoorna Hall)." />
   <meta name="twitter:image" content="https://aswin-yashaswini.vercel.app/assets/og-thumb.jpg" />
   <meta name="twitter:image:alt" content="Yashaswini &amp; Aswin engagement invitation — 30 August 2026" />
 
@@ -50,7 +50,7 @@
 </head>
 <body>
 
- <div id="intro-overlay" class="intro-overlay" role="dialog" aria-label="Engagement invitation intro">
+<div id="intro-overlay" class="intro-overlay" role="dialog" aria-label="Engagement invitation intro">
     <video id="intro-video" class="intro-video" playsinline webkit-playsinline preload="auto" muted>
       <source src="intro.webm" type="video/webm" />
       <source src="intro.mp4" type="video/mp4" />
@@ -61,14 +61,14 @@
     </div>
   </div>
 
-  <audio id="bg-music" src="assets/song.mp3" preload="auto" aria-hidden="true"></audio>
+  <audio id="bg-music" src="assets/song.mp3" preload="auto" aria-hidden="true"></audio> 
 
   <main id="main-site" class="main-site" aria-hidden="true">
     <section class="hero">
       <div class="section-bg">
         <picture>
-          <source srcset="assets/herobg.webp" type="image/webp" />
-          <img src="assets/herobg.jpg" alt="" />
+          <source srcset="assets/hero4.webp" type="image/webp" />
+          <img src="assets/hero4.jpg" alt="" />
         </picture>
       </div>
       <div class="butterflies" id="butterflies" aria-hidden="true"></div>
@@ -122,17 +122,28 @@
         <div class="save-date__time reveal" data-delay="3">
           <span>Sunday</span>
           <span class="save-date__sep">|</span>
-          <span>4 – 6 PM Onwards</span>
+          <span>3.30 – 4.30 PM</span>
         </div>
 
-        <button class="save-date__btn reveal" type="button" id="save-date-btn" data-delay="4">
+        <a
+          class="save-date__venue reveal map-link"
+          href="https://share.google/0K5w1o9aBBJy8IAW7"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-delay="4"
+        >
+          Sree Kuladevatha Mandir Complex<br />
+          Ambalamedu (Annapoorna Hall)
+        </a>
+
+        <button class="save-date__btn reveal" type="button" id="save-date-btn" data-delay="5">
           <span class="save-date__btn-text">Save the Date</span>
           <svg class="save-date__heart" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M12 21s-7-4.5-9.5-9C1 9 2.5 5.5 6 5.5c2 0 3.5 1.5 4 2.5.5-1 2-2.5 4-2.5 3.5 0 5 3.5 3.5 6.5C19 16.5 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.2"/>
           </svg>
         </button>
 
-        <button class="save-date__arrow reveal" type="button" data-delay="5" id="scroll-to-story" aria-label="Scroll to Our Love Story">
+        <button class="save-date__arrow reveal" type="button" data-delay="6" id="scroll-to-story" aria-label="Scroll to Our Love Story">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M12 5v14M5 12l7 7 7-7" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -146,15 +157,11 @@
         <img class="love-story__bg" src="assets/section2.jpg" alt="" loading="lazy" decoding="async" />
       </picture>
       <div class="love-story__content">
-        <h2 class="love-story__title reveal">
-          Our Love Story
-          <svg class="love-story__title-heart" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 21s-7-4.5-9.5-9C1 9 2.5 5.5 6 5.5c2 0 3.5 1.5 4 2.5.5-1 2-2.5 4-2.5 3.5 0 5 3.5 3.5 6.5C19 16.5 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.2"/>
-          </svg>
-        </h2>
+        <h2 class="love-story__title reveal">Our Love Story So Far</h2>
 
         <ol class="love-story__timeline">
-          <li class="love-story__item reveal" data-delay="1">
+          <li class="love-story__item reveal" data-delay="2">
+            <time class="love-story__when" datetime="2017">2017</time>
             <div class="love-story__marker" aria-hidden="true">
               <span class="love-story__icon">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -166,64 +173,156 @@
                 </svg>
               </span>
             </div>
-            <div class="love-story__text">
-              <h3 class="love-story__label">First Meet</h3>
-              <time class="love-story__when" datetime="2021-05">May 2021</time>
-            </div>
-          </li>
-
-          <li class="love-story__item reveal" data-delay="2">
-            <div class="love-story__marker" aria-hidden="true">
-              <span class="love-story__icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6 10.5h10.5v6.5a1.8 1.8 0 0 1-1.8 1.8H7.8a1.8 1.8 0 0 1-1.8-1.8v-6.5z" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/>
-                  <path d="M16.5 12h1.8a2.2 2.2 0 0 1 0 4.4H16.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
-                  <path d="M8 19.5h8" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
-                  <path d="M9.5 10.5V8.8a2.8 2.8 0 0 1 5.6 0V10.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
-                  <path d="M10.2 6.8c0-.9.7-1.6 1.6-1.6" stroke="currentColor" stroke-width="0.9" stroke-linecap="round"/>
-                  <path d="M13.8 6.8c0-.9-.7-1.6-1.6-1.6" stroke="currentColor" stroke-width="0.9" stroke-linecap="round"/>
-                </svg>
-              </span>
-            </div>
-            <div class="love-story__text">
-              <h3 class="love-story__label">Coffee Date</h3>
-              <time class="love-story__when" datetime="2021-06">June 2021</time>
+            <div class="love-story__panel">
+              <h3 class="love-story__label">First we met</h3>
             </div>
           </li>
 
           <li class="love-story__item reveal" data-delay="3">
+            <time class="love-story__when" datetime="2018">2018</time>
             <div class="love-story__marker" aria-hidden="true">
               <span class="love-story__icon">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="9" cy="9.5" r="2.2" stroke="currentColor" stroke-width="1"/>
-                  <circle cx="15" cy="9.5" r="2.2" stroke="currentColor" stroke-width="1"/>
-                  <path d="M5.5 19.5c0-2.8 1.8-5 3.5-5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
-                  <path d="M18.5 19.5c0-2.8-1.8-5-3.5-5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
-                  <path d="M9 11.7v1.8M15 11.7v1.8" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+                  <path d="M9 18V5l12-2v13" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/>
+                  <circle cx="6" cy="18" r="3" stroke="currentColor" stroke-width="1"/>
+                  <circle cx="18" cy="16" r="3" stroke="currentColor" stroke-width="1"/>
                 </svg>
               </span>
             </div>
-            <div class="love-story__text">
-              <h3 class="love-story__label">Best Friends</h3>
-              <time class="love-story__when" datetime="2021-08">Aug 2021</time>
+            <div class="love-story__panel">
+              <h3 class="love-story__label">TikTok buddies; tried hard to find him</h3>
             </div>
           </li>
 
           <li class="love-story__item reveal" data-delay="4">
+            <time class="love-story__when" datetime="2019">2019</time>
             <div class="love-story__marker" aria-hidden="true">
               <span class="love-story__icon">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 20.5s-5.5-3.6-7.8-7.2C2.2 10.2 3.5 6.5 7 6.5c2 0 3.2 1.2 3.8 2.4.6-1.2 1.8-2.4 3.8-2.4 3.5 0 4.8 3.7 2.8 6.8-2.3 3.6-7.8 7.2-7.8 7.2z" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/>
+                  <rect x="4" y="6" width="16" height="13" rx="1.5" stroke="currentColor" stroke-width="1"/>
+                  <circle cx="12" cy="12.5" r="3.2" stroke="currentColor" stroke-width="1"/>
+                  <path d="M8.5 6l1-2h5l1 2" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
                 </svg>
               </span>
             </div>
-            <div class="love-story__text">
-              <h3 class="love-story__label">Fell In Love</h3>
-              <time class="love-story__when" datetime="2021-12">Dec 2021</time>
+            <div class="love-story__panel">
+              <h3 class="love-story__label">Finally I found him, first selfie</h3>
             </div>
           </li>
 
           <li class="love-story__item reveal" data-delay="5">
+            <time class="love-story__when" datetime="2020">2020</time>
+            <div class="love-story__marker" aria-hidden="true">
+              <span class="love-story__icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="5" y="7" width="14" height="11" rx="1" stroke="currentColor" stroke-width="1"/>
+                  <path d="M5 9l7 5 7-5" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/>
+                  <path d="M12 15.5c.6-.5 1.1-.8 1.5-.8s.9.3 1.5.8" stroke="currentColor" stroke-width="0.9" stroke-linecap="round"/>
+                </svg>
+              </span>
+            </div>
+            <div class="love-story__panel">
+              <h3 class="love-story__label">COVID arrived, he proposed</h3>
+            </div>
+          </li>
+
+          <li class="love-story__item reveal" data-delay="6">
+            <time class="love-story__when" datetime="2021">2021</time>
+            <div class="love-story__marker" aria-hidden="true">
+              <span class="love-story__icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7.5 5.5h3l1.2 2.5-1.8 1.3a10.5 10.5 0 0 0 4.3 4.3l1.3-1.8 2.5 1.2v3a1.2 1.2 0 0 1-1.2 1.2A11.8 11.8 0 0 1 5.3 6.7a1.2 1.2 0 0 1 1.2-1.2z" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/>
+                  <path d="M14.5 8.5l2-2" stroke="currentColor" stroke-width="0.9" stroke-linecap="round"/>
+                  <path d="M16.5 6.5l1-1" stroke="currentColor" stroke-width="0.9" stroke-linecap="round"/>
+                </svg>
+              </span>
+            </div>
+            <div class="love-story__panel">
+              <h3 class="love-story__label">Long distance starts</h3>
+            </div>
+          </li>
+
+          <li class="love-story__item reveal" data-delay="7">
+            <time class="love-story__when" datetime="2022">2022</time>
+            <div class="love-story__marker" aria-hidden="true">
+              <span class="love-story__icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 20.5s-5.5-3.6-7.8-7.2C2.2 10.2 3.5 6.5 7 6.5c2 0 3.2 1.2 3.8 2.4.6-1.2 1.8-2.4 3.8-2.4 3.5 0 4.8 3.7 2.8 6.8-2.3 3.6-7.8 7.2-7.8 7.2z" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/>
+                  <path d="M8.5 12.5l2 2 5-5" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </div>
+            <div class="love-story__panel">
+              <h3 class="love-story__label">Growing together with love &amp; fights</h3>
+            </div>
+          </li>
+
+          <li class="love-story__item reveal" data-delay="8">
+            <time class="love-story__when" datetime="2023">2023</time>
+            <div class="love-story__marker" aria-hidden="true">
+              <span class="love-story__icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M19 14.5A7 7 0 1 1 12.5 6" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+                  <path d="M12.5 3v3h3" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M6.5 17.5l1.2 1.2M10 20l.8.8M14 20l.8.8M17.5 17.5l1.2 1.2" stroke="currentColor" stroke-width="0.8" stroke-linecap="round"/>
+                </svg>
+              </span>
+            </div>
+            <div class="love-story__panel">
+              <h3 class="love-story__label">Missing the most</h3>
+            </div>
+          </li>
+
+          <li class="love-story__item reveal" data-delay="9">
+            <time class="love-story__when" datetime="2024">2024</time>
+            <div class="love-story__marker" aria-hidden="true">
+              <span class="love-story__icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="4" y="8" width="16" height="11" rx="1.5" stroke="currentColor" stroke-width="1"/>
+                  <path d="M9 8V6.5A1.5 1.5 0 0 1 10.5 5h3A1.5 1.5 0 0 1 15 6.5V8" stroke="currentColor" stroke-width="1"/>
+                  <path d="M4 12h16" stroke="currentColor" stroke-width="1"/>
+                </svg>
+              </span>
+            </div>
+            <div class="love-story__panel">
+              <h3 class="love-story__label">Challenging year for both, our careers</h3>
+            </div>
+          </li>
+
+          <li class="love-story__item reveal" data-delay="10">
+            <time class="love-story__when" datetime="2025">2025</time>
+            <div class="love-story__marker" aria-hidden="true">
+              <span class="love-story__icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 10.5l7-4 7 4-7 4-7-4z" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/>
+                  <path d="M5 10.5v5l7 4 7-4v-5" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/>
+                  <path d="M19 10.5v3.5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+                </svg>
+              </span>
+            </div>
+            <div class="love-story__panel">
+              <h3 class="love-story__label">Graduation, our long-distance ends</h3>
+            </div>
+          </li>
+
+          <li class="love-story__item reveal" data-delay="11">
+            <time class="love-story__when" datetime="2026">2026</time>
+            <div class="love-story__marker" aria-hidden="true">
+              <span class="love-story__icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="5" y="5" width="14" height="15" rx="1.5" stroke="currentColor" stroke-width="1"/>
+                  <path d="M8 3v4M16 3v4M5 10h14" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+                  <path d="M9.5 14.5h5" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+                </svg>
+              </span>
+            </div>
+            <div class="love-story__panel">
+              <h3 class="love-story__label">Wedding plan starts</h3>
+            </div>
+          </li>
+
+          <li class="love-story__item reveal" data-delay="12">
+            <time class="love-story__when" datetime="2027">2027</time>
             <div class="love-story__marker" aria-hidden="true">
               <span class="love-story__icon">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -236,12 +335,13 @@
                 </svg>
               </span>
             </div>
-            <div class="love-story__text">
-              <h3 class="love-story__label">Forever Begins</h3>
-              <time class="love-story__when" datetime="2026-12">Dec 2026</time>
+            <div class="love-story__panel">
+              <h3 class="love-story__label">Forever begins</h3>
             </div>
           </li>
         </ol>
+
+        <p class="love-story__continued reveal" data-delay="13">to be continued...</p>
       </div>
     </section>
 
@@ -320,7 +420,7 @@
             <svg class="couple-card__heart" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M12 21s-7-4.5-9.5-9C1 9 2.5 5.5 6 5.5c2 0 3.5 1.5 4 2.5.5-1 2-2.5 4-2.5 3.5 0 5 3.5 3.5 6.5C19 16.5 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.2"/>
             </svg>
-            <p class="couple-card__desc">A dreamer, coffee lover, and the reason behind countless smiles.</p>
+            <p class="couple-card__desc">A dreamer, Chai lover, and the reason behind countless smiles.</p>
             <div class="couple-card__line" aria-hidden="true">
               <span></span><span></span>
             </div>
@@ -428,7 +528,7 @@
                   <path d="M12 8v4l3 2" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
                 </svg>
               </span>
-              <span class="engagement-details__text">4 – 6 PM Onwards</span>
+              <span class="engagement-details__text">3.30 – 4.30 PM</span>
             </li>
             <li class="engagement-details__item">
               <span class="engagement-details__icon" aria-hidden="true">
@@ -437,7 +537,33 @@
                   <circle cx="12" cy="11" r="2.5" stroke="currentColor" stroke-width="1"/>
                 </svg>
               </span>
-              <span class="engagement-details__text">Grand Palace Hall<br />Kochi, Kerala</span>
+              <span class="engagement-details__text">
+                <a
+                  class="map-link"
+                  href="https://share.google/0K5w1o9aBBJy8IAW7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Sree Kuladevatha Mandir Complex<br />Ambalamedu (Annapoorna Hall)
+                </a>
+              </span>
+            </li>
+            <li class="engagement-details__item">
+              <span class="engagement-details__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="engagement-details__text">
+                <a
+                  class="map-link map-link--directions"
+                  href="https://share.google/0K5w1o9aBBJy8IAW7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Get Directions
+                </a>
+              </span>
             </li>
           </ul>
           </div>
@@ -512,7 +638,7 @@
 
         <div class="blessings__family reveal" data-delay="2">
           <p class="blessings__family-label">Bride's Family</p>
-          <p class="blessings__family-names">Mrs. Lakshmi &amp; Mr. Ramesh</p>
+          <p class="blessings__family-names">Mr. Venkiteshwara Bhatt &amp; Mrs. Padmaa</p>
         </div>
 
         <div class="blessings__divider reveal" data-delay="3" aria-hidden="true">
@@ -525,7 +651,20 @@
 
         <div class="blessings__family reveal" data-delay="4">
           <p class="blessings__family-label">Groom's Family</p>
-          <p class="blessings__family-names">Mrs. Meena &amp; Mr. Suresh</p>
+          <p class="blessings__family-names">Mr. Anand &amp; Mrs. Priya</p>
+        </div>
+
+        <div class="blessings__divider reveal" data-delay="5" aria-hidden="true">
+          <span class="blessings__divider-line"></span>
+          <svg class="blessings__divider-heart" viewBox="0 0 24 24">
+            <path d="M12 21s-7-4.5-9.5-9C1 9 2.5 5.5 6 5.5c2 0 3.5 1.5 4 2.5.5-1 2-2.5 4-2.5 3.5 0 5 3.5 3.5 6.5C19 16.5 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.2"/>
+          </svg>
+          <span class="blessings__divider-line"></span>
+        </div>
+
+        <div class="blessings__family reveal" data-delay="6">
+          <p class="blessings__family-label">The Sibilings</p>
+          <p class="blessings__family-names">Yogeshwara &amp; Aiswarya</p>
         </div>
 
         <div class="blessings__flowers-wrap" aria-hidden="true">
@@ -641,7 +780,17 @@
         <h2 class="thank-you__title reveal" data-delay="2">Thank You!</h2>
         <p class="thank-you__subtitle reveal" data-delay="3">See you on our special day!</p>
 
-        <button class="thank-you__arrow reveal" type="button" data-delay="4" id="scroll-to-top" aria-label="Scroll to top">
+        <a
+          class="thank-you__map-link reveal map-link"
+          href="https://share.google/0K5w1o9aBBJy8IAW7"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-delay="4"
+        >
+          View Venue on Map
+        </a>
+
+        <button class="thank-you__arrow reveal" type="button" data-delay="5" id="scroll-to-top" aria-label="Scroll to top">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M12 19V5M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
