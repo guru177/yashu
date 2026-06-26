@@ -9,7 +9,8 @@ const assetsDir = path.join(root, "assets");
 
 const logoPath = path.join(assetsDir, "logo.jpg");
 const thumbPath = path.join(assetsDir, "thump.png");
-const ogThumbPath = path.join(assetsDir, "og-thumb.jpg");
+const ogThumbPath = path.join(assetsDir, "og-share.jpg");
+const ogThumbRootPath = path.join(root, "og-share.jpg");
 
 async function generateFavicons() {
   if (!fs.existsSync(logoPath)) {
@@ -52,10 +53,13 @@ async function generateOgThumb() {
 
   const pipeline = sharp(source).resize(1200, 630, { fit: "cover", position: "centre" });
 
-  await pipeline.clone().jpeg({ quality: 90, mozjpeg: true }).toFile(ogThumbPath);
-  await pipeline.clone().webp({ quality: 85, effort: 6 }).toFile(path.join(assetsDir, "og-thumb.webp"));
+  await pipeline
+    .clone()
+    .jpeg({ quality: 82, mozjpeg: true, progressive: true })
+    .toFile(ogThumbPath);
+  await pipeline.clone().toFile(ogThumbRootPath);
 
-  console.log(`Created assets/og-thumb.jpg and assets/og-thumb.webp from ${path.basename(source)}`);
+  console.log(`Created og-share.jpg from ${path.basename(source)}`);
 }
 
 async function main() {
