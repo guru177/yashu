@@ -38,21 +38,24 @@ async function generateFavicons() {
 }
 
 async function generateOgThumb() {
-  const source = [thumbPath, path.join(assetsDir, "hero5.jpg"), logoPath].find((file) =>
-    fs.existsSync(file)
-  );
+  const source = [
+    path.join(assetsDir, "og-thumb2.png"),
+    thumbPath,
+    path.join(assetsDir, "hero5.jpg"),
+    logoPath,
+  ].find((file) => fs.existsSync(file));
 
   if (!source) {
     console.warn("Skip og-thumb: no source image found");
     return;
   }
 
-  await sharp(source)
-    .resize(1200, 630, { fit: "fill" })
-    .jpeg({ quality: 90, mozjpeg: true })
-    .toFile(ogThumbPath);
+  const pipeline = sharp(source).resize(1200, 630, { fit: "cover", position: "centre" });
 
-  console.log(`Created assets/og-thumb.jpg from ${path.basename(source)}`);
+  await pipeline.clone().jpeg({ quality: 90, mozjpeg: true }).toFile(ogThumbPath);
+  await pipeline.clone().webp({ quality: 85, effort: 6 }).toFile(path.join(assetsDir, "og-thumb.webp"));
+
+  console.log(`Created assets/og-thumb.jpg and assets/og-thumb.webp from ${path.basename(source)}`);
 }
 
 async function main() {
